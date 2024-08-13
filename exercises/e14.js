@@ -1,13 +1,15 @@
 import { data } from "../data/data";
 
+
 // SPACE DATA EXERCISE 14
 // Return the sum of orbital periods of all asteroids
 // Return example: 234234.234
 
 export function getOrbitalPeriodsSum(data) {
-  // Your code goes here...
+  return data.asteroids
+      .map((asteroid) => asteroid.orbitalPeriod)
+      .reduce((acc, value) => acc + value)
 }
-
 
 
 // === TEST YOURSELF ===
