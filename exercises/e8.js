@@ -13,8 +13,8 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   return data.planets
-    .find((planet) => planet.moons && planet.moons.includes(moonName)).name
-
+    .find((planet) => planet.moons && planet.moons
+    .includes(moonName)).name
 }
 
 

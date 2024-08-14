@@ -8,17 +8,21 @@
  */
 
 export function getGreatestDiscoveryYear(data) {
-  let obj = {}
-  let orderedArr = data.asteroids
-      .map((el) => el.discoveryYear)
+  const yearCounts = data.asteroids.reduce((counts, asteroid) => {
+    const year = asteroid.discoveryYear
+    counts[year] = (counts[year] || 0) + 1
+    return counts
+  }, {})
 
-  for (let year of orderedArr) {
-    if(obj[year]) obj[year]++
-    else (obj[year] = 1)
+  let maxYear = null
+  let maxCount = 0
+  for (const year in yearCounts) {
+    if (yearCounts[year] > maxCount) {
+      maxCount = yearCounts[year]
+      maxYear = parseInt(year)
+    }
   }
-
-// I don't know how to sort the right answer out of the object
-return obj
+  return maxYear
 }
 
 
