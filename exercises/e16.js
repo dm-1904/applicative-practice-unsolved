@@ -1,6 +1,6 @@
 /**
  * Make sure to read the e16.md file!
- * For this exercise we want you to make a custom `find` method. 
+ * For this exercise we want you to make a custom `find` method.
  * In order to do this it is ok to use any type of FOR loops.
  * REQUIREMENT: A find function should
  * * Take an array of things
@@ -10,8 +10,14 @@
 
 
 export function find(array, callback) {
-  // Your code goes here...
-  
+  const ansArr = []
+  for(let el of array) {
+    if(callback(el)) {
+      // ansArr.push(el)
+      return el
+    }
+  }
+  return undefined 
 }
 
 
