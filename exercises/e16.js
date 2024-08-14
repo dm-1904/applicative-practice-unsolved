@@ -10,14 +10,12 @@
 
 
 export function find(array, callback) {
-  const ansArr = []
   for(let el of array) {
     if(callback(el)) {
-      // ansArr.push(el)
       return el
     }
   }
-  return undefined 
+  return undefined
 }
 
 

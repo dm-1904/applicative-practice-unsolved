@@ -1,7 +1,7 @@
 /**
  * Make sure to read the e17.md file!
- * For this exercise we want you to make custom `maxBy` and `minBy` methods. 
- * In order to do this it is ok to use any type of FOR loops. 
+ * For this exercise we want you to make custom `maxBy` and `minBy` methods.
+ * In order to do this it is ok to use any type of FOR loops.
  * REQUIREMENTS: functions should:
  * * Take an array of things
  * * minBy(): Return the element where the callback function on that element yields the lowest value
@@ -9,12 +9,25 @@
  */
 
 export function minBy(array, cb) {
-  // Your code goes here...
+  let min = array[0]
 
+  for (let person of array) {
+    if (cb(person) < cb(min)) {
+      min = person
+    }
+  }
+  return min
 }
 
 export function maxBy(array, cb) {
-  // Your code goes here...
+  let max = array[0]
+
+  for (let person of array) {
+    if (cb(person) > cb(max)) {
+      max = person
+    }
+  }
+  return max
 
 }
 
